@@ -95,6 +95,24 @@ import UIKit
         }
     }
     
+    open var footerViewHeight: CGFloat = 0.0 {
+        didSet {
+            segmentedScrollView.bottomSpacing = footerViewHeight
+            self.addSegmentedScrollView()
+        }
+    }
+    
+    open var bannerHeigh: CGFloat = 0.0 {
+        didSet {
+            segmentedScrollView.bottomSpacing = bannerHeigh
+            segmentedScrollView.updateSubviewsFrame(view.bounds)
+        }
+    }
+    open func test(){
+        
+    }
+
+    
     /**
      *  Set color for selected segment.
      *
@@ -298,7 +316,7 @@ import UIKit
     
     override open func loadView() {
         super.loadView()
-        addSegmentedScrollView()
+//        addSegmentedScrollView()
     }
     
     override open func viewDidLoad() {
@@ -321,7 +339,7 @@ import UIKit
         
         let topSpacing = SJUtil.getTopSpacing(self)
         segmentedScrollView.topSpacing = topSpacing
-        segmentedScrollView.bottomSpacing = SJUtil.getBottomSpacing(self)
+//        segmentedScrollView.bottomSpacing = SJUtil.getBottomSpacing(self)
         segmentScrollViewTopConstraint?.constant = topSpacing
         segmentedScrollView.updateSubviewsFrame(view.bounds)
     }
