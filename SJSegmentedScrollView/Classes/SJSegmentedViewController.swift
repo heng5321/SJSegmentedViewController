@@ -388,7 +388,7 @@ import UIKit
         segmentedScrollView.topSpacing = topSpacing
         
         let bottomSpacing = SJUtil.getBottomSpacing(self)
-        segmentedScrollView.bottomSpacing = bottomSpacing
+        segmentedScrollView.bottomSpacing = bottomSpacing + footerViewHeight
         
         view.addSubview(segmentedScrollView)
         
